@@ -1,0 +1,29 @@
+@startuml
+
+class Titanic{
+ui
+AbstractChartView
+}
+Titanic  getPieChart()
+Titanic  getBarChart()
+Titanic  getMultiChart()
+class Data
+Data  readFile()
+class Passenger
+class AbstractChartView
+AbstractChartView  QWidget getData()
+class PieChartView
+PieChartView  getPieChart()
+class BarChartView
+BarChartView  getBarChart()
+class MultiChartView
+MultiChartView  getMultiChart()
+
+Titanic o-- AbstractChartView
+Titanic -- Data
+Data -- Passenger
+AbstractChartView -- PieChartView
+AbstractChartView -- BarChartView
+AbstractChartView -- MultiChartView
+
+@enduml
