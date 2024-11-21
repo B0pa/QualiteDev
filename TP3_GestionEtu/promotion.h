@@ -5,6 +5,7 @@
 #include "observer.h"
 #include "QFile"
 #include "QVector"
+#include <QMessageBox>
 
 /**
  * @brief Promotion manage the list of students
@@ -31,8 +32,8 @@ public:
     QMap<QString, int> getListBacs() const;
 
     friend QDebug operator<<(QDebug os, const Promotion& dt);
-    virtual void addObserver(Observer* observer) override { observer.append(observer); }
-    virtual void removeObserver(Observer* observer) override { observer.removeAll(observer); }
+    virtual void addObserver(Observer* observer) override { observers.append(observer); }
+    virtual void removeObserver(Observer* observer) override { observers.removeAll(observer); }
     virtual void notifyObserver() const override {for (Observer* observer : observers) observer->update();}
 };
 

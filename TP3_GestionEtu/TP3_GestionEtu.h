@@ -8,6 +8,9 @@
 #include "viewPieChart.h"
 #include "viewHistogram.h"
 
+#include "iostream"
+using namespace std;
+
 class TP3_GestionEtu : public QMainWindow
 {
     Q_OBJECT

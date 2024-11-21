@@ -10,7 +10,6 @@ ViewList::ViewList(Promotion* promo, QListWidget* list):promo(promo), list(list)
 void ViewList::update()
 {
     list->clear();
-
     list->addItems(promo->getList());
 }
 

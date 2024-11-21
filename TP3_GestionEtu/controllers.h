@@ -34,7 +34,9 @@ private:
     Promotion* promo;
 public:
 
-    ControllerAddForm(Promotion* promo) : promo(promo) {}
+    ControllerAddForm(Promotion* promo) : promo(promo) {
+
+    }
 
     virtual void control(const QStringList& list) override
     {
@@ -49,23 +51,23 @@ public:
 
         if (list[0] == "")
         {
-            QMessageBox::warning(nullptr, "Add Student", "The card ID is empty."); return;
+            QMessageBox::warning(nullptr, "Add Student", "ID can't be null"); return;
         }
         if (list[1] == "")
         {
-            QMessageBox::warning(nullptr, "Add Student", "The firstname is empty."); return;
+            QMessageBox::warning(nullptr, "Add Student", "firstname can't be null"); return;
         }
         if (list[2] == "")
         {
-            QMessageBox::warning(nullptr, "Add Student", "The lastname is empty."); return;
+            QMessageBox::warning(nullptr, "Add Student", "lastname can't be null"); return;
         }
         if (list[3] == "")
         {
-            QMessageBox::warning(nullptr, "Add Student", "The bac is empty."); return;
+            QMessageBox::warning(nullptr, "Add Student", "bac can't be null"); return;
         }
         if (list[4] == "")
         {
-            QMessageBox::warning(nullptr, "Add Student", "The department is empty."); return;
+            QMessageBox::warning(nullptr, "Add Student", "department can't be null"); return;
         }
 
         Student studentNew(list[0], list[1], list[2], list[3], list[4]);
@@ -83,11 +85,14 @@ public:
 
     virtual void control(const QStringList& list) override
     {
+        qDebug()<<"Controller";
         if (list.size() != 1) return;
-
         Student student = promo->find(list[0]);
-
-        if (student.getCardID()!="")
+        if (student.getCardID()!=""){
+             qDebug()<<"removedebut";
             promo->remove(student);
+              qDebug()<<"removefin";
+        }
+
     }
 };

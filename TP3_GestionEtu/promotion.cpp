@@ -1,24 +1,23 @@
 #include "promotion.h"
 
+
 /**
  * @brief Constructor of the Promotion Class to manage the List of student
  * @param filename, path to the data CSV file
 */
 Promotion::Promotion(QString filename)
 {
-
     QFile file(filename);
     if (file.open(QIODevice::ReadOnly | QFile::Text))
     {
         QTextStream in(&file);
-
         while (!in.atEnd())
         {
             QStringList split = in.readLine().split(';');
             add(Student(split[0], split[1], split[2], split[4], split[3]));
         }
-
         file.close();
+        qDebug() << "[+] Promotion";
     }
     else
     {
@@ -34,6 +33,7 @@ Promotion::Promotion(QString filename)
 void Promotion::add(const Student &etu)
 {
     students.append(etu);
+    notifyObserver();
 }
 
 /**
@@ -42,15 +42,29 @@ void Promotion::add(const Student &etu)
 */
 void Promotion::remove(const QString& listText)
 {
-
+    for (int i = students.size() - 1 ; i >= 0; i--)
+    {
+        if (students[i].getText() == listText)
+        {
+            students.remove(i);
+        }
+    }
+    notifyObserver();
 }
 
 /**
  * @brief Function to remove a specific student
  * @param etu The student to remove
 */
-void Promotion::remove(const Student &etu)
-{
+void Promotion::remove(const Student &etu){
+
+    for (int i=0;i<students.size();i++)
+    {
+        if (students[i].getCardID() == etu.getCardID())
+            students.remove(i);
+    }
+    QMessageBox::warning(nullptr, "Remove student", "student removed");
+    notifyObserver();
 
 }
 
@@ -61,7 +75,17 @@ void Promotion::remove(const Student &etu)
 */
 Student Promotion::find(QString cardID) const
 {
-    return Student();
+    qDebug()<<"find";
+    for (Student student: students)
+    {
+        if (student.getCardID() == cardID){
+            qDebug()<<"fin";
+            return student;
+        }
+    }
+     qDebug()<<"fin";
+
+    return Student("","","","","");
 }
 
 /**
@@ -81,14 +105,11 @@ QDebug operator<<(QDebug  os, const Promotion& dt)
 QStringList Promotion::getList() const
 {
     QStringList list;
-
     for (const Student& student : students)
     {
         list.append(student.getText());
     }
-
     list.sort();
-
     return list;
 }
 
