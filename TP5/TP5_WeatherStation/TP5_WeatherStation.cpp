@@ -156,7 +156,7 @@ void TP5_WeatherStation::weatherReplyFinished(QNetworkReply* reply)
  */
 void TP5_WeatherStation::pollutionRequest()
 {
-    QString URL = "https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=48.8534&lon=2.3488&units=metric&lang=fr&appid=0d41ac5cb088db1d5301807cbfb18170";
+    QString URL = "https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=48.8534&lon=2.3488&units=metric&lang=fr&appid=XXXXXXXXXXXXXXXXXXXXx";
     QUrl url(URL);
     QNetworkRequest* request = new QNetworkRequest(url);
     request->setUrl(url);
