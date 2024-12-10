@@ -1,0 +1,68 @@
+\doxysection{View\+Report Class Reference}
+\hypertarget{class_view_report}{}\label{class_view_report}\index{ViewReport@{ViewReport}}
+
+
+The \doxylink{class_view_report}{View\+Report} class.  
+
+
+
+
+{\ttfamily \#include $<$viewreport.\+h$>$}
+
+Inheritance diagram for View\+Report\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_view_report}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_view_report_a2c7f609685de3f6634c6fb33b11e47b6}\label{class_view_report_a2c7f609685de3f6634c6fb33b11e47b6} 
+{\bfseries View\+Report} (\mbox{\hyperlink{class_weather_report}{Weather\+Report}} \texorpdfstring{$\ast$}{*}wreport, Ui\+::\+TP5\+\_\+\+Weather\+Station\+Class \texorpdfstring{$\ast$}{*}ui)
+\item 
+\Hypertarget{class_view_report_a4b102541e529934164926678a5824cfe}\label{class_view_report_a4b102541e529934164926678a5824cfe} 
+void {\bfseries init} ()
+\begin{DoxyCompactList}\small\item\em Initializes the view by clearing all line edits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_view_report_a6b000e43b08f5a1b97c7120d095de5de}{update}} () override
+\begin{DoxyCompactList}\small\item\em Updates the view with the latest data from the model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_view_report}{View\+Report} class. 
+
+The \doxylink{class_view_report}{View\+Report} class provides a view for weather reports.
+
+\begin{DoxyAuthor}{Author}
+FJa
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em wreport} & Weather report model. \\
+\hline
+{\em ui} & User interface for the TP5\+\_\+\+Weather\+Station\+Class. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_view_report_a6b000e43b08f5a1b97c7120d095de5de}\label{class_view_report_a6b000e43b08f5a1b97c7120d095de5de} 
+\index{ViewReport@{ViewReport}!update@{update}}
+\index{update@{update}!ViewReport@{ViewReport}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void View\+Report\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the view with the latest data from the model. 
+
+
+
+Implements \mbox{\hyperlink{class_observer}{Observer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+viewreport.\+h\item 
+viewreport.\+cpp\end{DoxyCompactItemize}

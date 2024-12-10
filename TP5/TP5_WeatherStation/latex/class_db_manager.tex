@@ -1,0 +1,298 @@
+\doxysection{Db\+Manager Class Reference}
+\hypertarget{class_db_manager}{}\label{class_db_manager}\index{DbManager@{DbManager}}
+
+
+The \doxylink{class_db_manager}{Db\+Manager} class provides a database manager to handle pollution data.  
+
+
+
+
+{\ttfamily \#include $<$dbmanager.\+h$>$}
+
+Inheritance diagram for Db\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_db_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_db_manager_a449b4cc451c4ec493345d799891e7eaa}{Db\+Manager}} (const QString \&path)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_db_manager_ac5cdf8e5e932d1681ab807d8f256374c}{\texorpdfstring{$\sim$}{\string~}\+Db\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_db_manager_ac04baba8f5d5197f8bcd9230393501de}{is\+Open}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the database connection is open. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_db_manager_ac8c34581c717a41e7585a6dabceec002}{create\+Table}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new \textquotesingle{}pollution\textquotesingle{} table if it doesn\textquotesingle{}t already exist. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_db_manager_a9465c713b991a6c7b593c8925de93030}{add\+Data}} (int dt, int aqi)
+\begin{DoxyCompactList}\small\item\em Add data to db. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_db_manager_a8dc57f5dc421630c8f5788046a9fec1c}{remove\+Data}} (int dt)
+\begin{DoxyCompactList}\small\item\em Remove data of dt "{}dt"{} from db. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_db_manager_a05da2b57b31771e6ec051db87695709d}{entry\+Exists}} (int dt) const
+\begin{DoxyCompactList}\small\item\em Check if data of dt "{}dt"{} exists in db. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_db_manager_a79b53336351bef9f6e7ababc8af3fd7b}{print\+All\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Print values of all data in db. \end{DoxyCompactList}\item 
+QMap$<$ int, int $>$ \mbox{\hyperlink{class_db_manager_af77edba6cb74df1e2da260e3736004ab}{get\+All\+Data}} () const
+\begin{DoxyCompactList}\small\item\em return values of all data in db \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_db_manager_a0f2605f9c22754d62f239f95c0c77e98}{remove\+All\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Remove all data from db. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_db_manager_a27c3f4bd51a06c6e5db46c0cef51e65d}{add\+Observer}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void \mbox{\hyperlink{class_db_manager_a215156da8c13a21d610ba0d222bb995c}{remove\+Observer}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void \mbox{\hyperlink{class_db_manager_a051c7039678ab1ad354d87a85b71b885}{notify\+Observer}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_db_manager_a6e896f1583774b9c69159ef681df4142}\label{class_db_manager_a6e896f1583774b9c69159ef681df4142} 
+QVector$<$ \mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observers}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_db_manager}{Db\+Manager} class provides a database manager to handle pollution data. 
+
+SQL Database Manager class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to the SQLite database.\\
+\hline
+\end{DoxyParams}
+\doxylink{class_db_manager}{Db\+Manager} sets up the connection with SQL database and performs some basics queries. The class requires existing SQL database. You can create it with sqlite\+:
+\begin{DoxyEnumerate}
+\item \$ sqlite3 pollution.\+db
+\item sqlite\texorpdfstring{$>$}{>} CREATE TABLE pollution(ids integer primary key, dt interger, aqi integer);
+\item sqlite\texorpdfstring{$>$}{>} .quit 
+\end{DoxyEnumerate}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_db_manager_a449b4cc451c4ec493345d799891e7eaa}\label{class_db_manager_a449b4cc451c4ec493345d799891e7eaa} 
+\index{DbManager@{DbManager}!DbManager@{DbManager}}
+\index{DbManager@{DbManager}!DbManager@{DbManager}}
+\doxysubsubsection{\texorpdfstring{DbManager()}{DbManager()}}
+{\footnotesize\ttfamily Db\+Manager\+::\+Db\+Manager (\begin{DoxyParamCaption}\item[{const QString \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Constructor sets up connection with db and opens it 
+\begin{DoxyParams}{Parameters}
+{\em path} & -\/ absolute path to db file \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_db_manager_ac5cdf8e5e932d1681ab807d8f256374c}\label{class_db_manager_ac5cdf8e5e932d1681ab807d8f256374c} 
+\index{DbManager@{DbManager}!````~DbManager@{\texorpdfstring{$\sim$}{\string~}DbManager}}
+\index{````~DbManager@{\texorpdfstring{$\sim$}{\string~}DbManager}!DbManager@{DbManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DbManager()}{\string~DbManager()}}
+{\footnotesize\ttfamily Db\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Db\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Destructor for the \doxylink{class_db_manager}{Db\+Manager} class. Closes the database connection if it is open.
+
+Close the db connection 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_db_manager_a9465c713b991a6c7b593c8925de93030}\label{class_db_manager_a9465c713b991a6c7b593c8925de93030} 
+\index{DbManager@{DbManager}!addData@{addData}}
+\index{addData@{addData}!DbManager@{DbManager}}
+\doxysubsubsection{\texorpdfstring{addData()}{addData()}}
+{\footnotesize\ttfamily bool Db\+Manager\+::add\+Data (\begin{DoxyParamCaption}\item[{int}]{dt,  }\item[{int}]{aqi }\end{DoxyParamCaption})}
+
+
+
+Add data to db. 
+
+Adds a data entry to the \textquotesingle{}pollution\textquotesingle{} table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & -\/ date time \\
+\hline
+{\em aqi} & -\/ air quality indice \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true -\/ data added successfully, false -\/ data not added
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The datetime of the data entry. \\
+\hline
+{\em aqi} & The Air Quality Index of the data entry. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the data entry was successfully added, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_db_manager_a27c3f4bd51a06c6e5db46c0cef51e65d}\label{class_db_manager_a27c3f4bd51a06c6e5db46c0cef51e65d} 
+\index{DbManager@{DbManager}!addObserver@{addObserver}}
+\index{addObserver@{addObserver}!DbManager@{DbManager}}
+\doxysubsubsection{\texorpdfstring{addObserver()}{addObserver()}}
+{\footnotesize\ttfamily void Db\+Manager\+::add\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_observable}{Observable}}.
+
+\Hypertarget{class_db_manager_ac8c34581c717a41e7585a6dabceec002}\label{class_db_manager_ac8c34581c717a41e7585a6dabceec002} 
+\index{DbManager@{DbManager}!createTable@{createTable}}
+\index{createTable@{createTable}!DbManager@{DbManager}}
+\doxysubsubsection{\texorpdfstring{createTable()}{createTable()}}
+{\footnotesize\ttfamily bool Db\+Manager\+::create\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a new \textquotesingle{}pollution\textquotesingle{} table if it doesn\textquotesingle{}t already exist. 
+
+Creates the \textquotesingle{}pollution\textquotesingle{} table in the database.
+
+\begin{DoxyReturn}{Returns}
+true -\/ \textquotesingle{}pollution\textquotesingle{} table created successfully, false -\/ table not created
+
+True if the table was successfully created, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_db_manager_a05da2b57b31771e6ec051db87695709d}\label{class_db_manager_a05da2b57b31771e6ec051db87695709d} 
+\index{DbManager@{DbManager}!entryExists@{entryExists}}
+\index{entryExists@{entryExists}!DbManager@{DbManager}}
+\doxysubsubsection{\texorpdfstring{entryExists()}{entryExists()}}
+{\footnotesize\ttfamily bool Db\+Manager\+::entry\+Exists (\begin{DoxyParamCaption}\item[{int}]{dt }\end{DoxyParamCaption}) const}
+
+
+
+Check if data of dt "{}dt"{} exists in db. 
+
+Checks if a data entry exists in the \textquotesingle{}pollution\textquotesingle{} table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & -\/ dt of data to to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true -\/ data exists, false -\/ data does not exist
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The datetime of the data entry to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the data entry exists, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_db_manager_af77edba6cb74df1e2da260e3736004ab}\label{class_db_manager_af77edba6cb74df1e2da260e3736004ab} 
+\index{DbManager@{DbManager}!getAllData@{getAllData}}
+\index{getAllData@{getAllData}!DbManager@{DbManager}}
+\doxysubsubsection{\texorpdfstring{getAllData()}{getAllData()}}
+{\footnotesize\ttfamily QMap$<$ int, int $>$ Db\+Manager\+::get\+All\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+return values of all data in db 
+
+Retrieves all data from the \textquotesingle{}pollution\textquotesingle{} table.
+
+\begin{DoxyReturn}{Returns}
+A QMap containing all data from the \textquotesingle{}pollution\textquotesingle{} table. 
+\end{DoxyReturn}
+\Hypertarget{class_db_manager_ac04baba8f5d5197f8bcd9230393501de}\label{class_db_manager_ac04baba8f5d5197f8bcd9230393501de} 
+\index{DbManager@{DbManager}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!DbManager@{DbManager}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}}
+{\footnotesize\ttfamily bool Db\+Manager\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the database connection is open. 
+
+\begin{DoxyReturn}{Returns}
+True if the database connection is open, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_db_manager_a051c7039678ab1ad354d87a85b71b885}\label{class_db_manager_a051c7039678ab1ad354d87a85b71b885} 
+\index{DbManager@{DbManager}!notifyObserver@{notifyObserver}}
+\index{notifyObserver@{notifyObserver}!DbManager@{DbManager}}
+\doxysubsubsection{\texorpdfstring{notifyObserver()}{notifyObserver()}}
+{\footnotesize\ttfamily void Db\+Manager\+::notify\+Observer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_observable}{Observable}}.
+
+\Hypertarget{class_db_manager_a79b53336351bef9f6e7ababc8af3fd7b}\label{class_db_manager_a79b53336351bef9f6e7ababc8af3fd7b} 
+\index{DbManager@{DbManager}!printAllData@{printAllData}}
+\index{printAllData@{printAllData}!DbManager@{DbManager}}
+\doxysubsubsection{\texorpdfstring{printAllData()}{printAllData()}}
+{\footnotesize\ttfamily void Db\+Manager\+::print\+All\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Print values of all data in db. 
+
+Prints all data from the \textquotesingle{}pollution\textquotesingle{} table to the console. \Hypertarget{class_db_manager_a0f2605f9c22754d62f239f95c0c77e98}\label{class_db_manager_a0f2605f9c22754d62f239f95c0c77e98} 
+\index{DbManager@{DbManager}!removeAllData@{removeAllData}}
+\index{removeAllData@{removeAllData}!DbManager@{DbManager}}
+\doxysubsubsection{\texorpdfstring{removeAllData()}{removeAllData()}}
+{\footnotesize\ttfamily bool Db\+Manager\+::remove\+All\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove all data from db. 
+
+Removes all data from the \textquotesingle{}pollution\textquotesingle{} table.
+
+\begin{DoxyReturn}{Returns}
+true -\/ all data removed successfully, false -\/ not removed
+
+True if all data was successfully removed, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_db_manager_a8dc57f5dc421630c8f5788046a9fec1c}\label{class_db_manager_a8dc57f5dc421630c8f5788046a9fec1c} 
+\index{DbManager@{DbManager}!removeData@{removeData}}
+\index{removeData@{removeData}!DbManager@{DbManager}}
+\doxysubsubsection{\texorpdfstring{removeData()}{removeData()}}
+{\footnotesize\ttfamily bool Db\+Manager\+::remove\+Data (\begin{DoxyParamCaption}\item[{int}]{dt }\end{DoxyParamCaption})}
+
+
+
+Remove data of dt "{}dt"{} from db. 
+
+Removes a data entry from the \textquotesingle{}pollution\textquotesingle{} table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & -\/ dt of data to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true -\/ data removed successfully, false -\/ data not removed
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The datetime of the data entry to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the data entry was successfully removed, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_db_manager_a215156da8c13a21d610ba0d222bb995c}\label{class_db_manager_a215156da8c13a21d610ba0d222bb995c} 
+\index{DbManager@{DbManager}!removeObserver@{removeObserver}}
+\index{removeObserver@{removeObserver}!DbManager@{DbManager}}
+\doxysubsubsection{\texorpdfstring{removeObserver()}{removeObserver()}}
+{\footnotesize\ttfamily void Db\+Manager\+::remove\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_observable}{Observable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+dbmanager.\+h\item 
+dbmanager.\+cpp\end{DoxyCompactItemize}

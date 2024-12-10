@@ -1,0 +1,96 @@
+\doxysection{Weather\+Report Class Reference}
+\hypertarget{class_weather_report}{}\label{class_weather_report}\index{WeatherReport@{WeatherReport}}
+
+
+The \doxylink{class_weather_report}{Weather\+Report} class.  
+
+
+
+
+{\ttfamily \#include $<$weatherreport.\+h$>$}
+
+Inheritance diagram for Weather\+Report\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_weather_report}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_weather_report_a39c46cb4617d6e77b16589aef6e2cd7a}{add\+Observer}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void \mbox{\hyperlink{class_weather_report_aa4ce673a0573a63f5c3dd60b0759c5f1}{remove\+Observer}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void \mbox{\hyperlink{class_weather_report_a8f85a5d840c5ec2dad9ba4b4e5308126}{notify\+Observer}} () const
+\item 
+\Hypertarget{class_weather_report_aa0472e3ea6ea829ec64bb8514173a274}\label{class_weather_report_aa0472e3ea6ea829ec64bb8514173a274} 
+const QString \& {\bfseries get\+Description} () const
+\item 
+\Hypertarget{class_weather_report_a05b641f88ba1f2049e6360a26667f9a6}\label{class_weather_report_a05b641f88ba1f2049e6360a26667f9a6} 
+double {\bfseries get\+Temp} () const
+\item 
+\Hypertarget{class_weather_report_a6a09af64595b9afba57c8590c63157f2}\label{class_weather_report_a6a09af64595b9afba57c8590c63157f2} 
+double {\bfseries get\+Temp\+Min} () const
+\item 
+\Hypertarget{class_weather_report_a4c0befa1469cd184f5a3267aa809636b}\label{class_weather_report_a4c0befa1469cd184f5a3267aa809636b} 
+double {\bfseries get\+Temp\+Max} () const
+\item 
+\Hypertarget{class_weather_report_a1bdd9b22a6985bb62a0c6754fa47e46d}\label{class_weather_report_a1bdd9b22a6985bb62a0c6754fa47e46d} 
+double {\bfseries get\+Lon} () const
+\item 
+\Hypertarget{class_weather_report_a570e2e22ca7bb0d0cda6375f8de3ef34}\label{class_weather_report_a570e2e22ca7bb0d0cda6375f8de3ef34} 
+double {\bfseries get\+Lat} () const
+\item 
+\Hypertarget{class_weather_report_a28f73119722b5982c9acfaa210d5dd68}\label{class_weather_report_a28f73119722b5982c9acfaa210d5dd68} 
+void {\bfseries fetch\+Data} (QString \+\_\+main, QString \+\_\+description, double \+\_\+temp, double \+\_\+temp\+\_\+min, double \+\_\+temp\+\_\+max, double \+\_\+lon, double \+\_\+lat)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_weather_report}{Weather\+Report} class. 
+
+The \doxylink{class_weather_report}{Weather\+Report} class provides a model for weather reports.
+
+\begin{DoxyAuthor}{Author}
+FJa 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_weather_report_a39c46cb4617d6e77b16589aef6e2cd7a}\label{class_weather_report_a39c46cb4617d6e77b16589aef6e2cd7a} 
+\index{WeatherReport@{WeatherReport}!addObserver@{addObserver}}
+\index{addObserver@{addObserver}!WeatherReport@{WeatherReport}}
+\doxysubsubsection{\texorpdfstring{addObserver()}{addObserver()}}
+{\footnotesize\ttfamily void Weather\+Report\+::add\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_observable}{Observable}}.
+
+\Hypertarget{class_weather_report_a8f85a5d840c5ec2dad9ba4b4e5308126}\label{class_weather_report_a8f85a5d840c5ec2dad9ba4b4e5308126} 
+\index{WeatherReport@{WeatherReport}!notifyObserver@{notifyObserver}}
+\index{notifyObserver@{notifyObserver}!WeatherReport@{WeatherReport}}
+\doxysubsubsection{\texorpdfstring{notifyObserver()}{notifyObserver()}}
+{\footnotesize\ttfamily void Weather\+Report\+::notify\+Observer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_observable}{Observable}}.
+
+\Hypertarget{class_weather_report_aa4ce673a0573a63f5c3dd60b0759c5f1}\label{class_weather_report_aa4ce673a0573a63f5c3dd60b0759c5f1} 
+\index{WeatherReport@{WeatherReport}!removeObserver@{removeObserver}}
+\index{removeObserver@{removeObserver}!WeatherReport@{WeatherReport}}
+\doxysubsubsection{\texorpdfstring{removeObserver()}{removeObserver()}}
+{\footnotesize\ttfamily void Weather\+Report\+::remove\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_observable}{Observable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+weatherreport.\+h\item 
+weatherreport.\+cpp\end{DoxyCompactItemize}

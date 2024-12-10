@@ -1,0 +1,95 @@
+\doxysection{TP5\+\_\+\+Weather\+Station Class Reference}
+\hypertarget{class_t_p5___weather_station}{}\label{class_t_p5___weather_station}\index{TP5\_WeatherStation@{TP5\_WeatherStation}}
+
+
+The \doxylink{class_t_p5___weather_station}{TP5\+\_\+\+Weather\+Station} class.  
+
+
+
+
+{\ttfamily \#include $<$TP5\+\_\+\+Weather\+Station.\+h$>$}
+
+Inheritance diagram for TP5\+\_\+\+Weather\+Station\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_t_p5___weather_station}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_t_p5___weather_station_a7ea622e17297329657ae5efa5ec2ca9a}\label{class_t_p5___weather_station_a7ea622e17297329657ae5efa5ec2ca9a} 
+void {\bfseries weather\+Request} ()
+\begin{DoxyCompactList}\small\item\em Sends a request to the Open\+Weather\+Map API to get weather data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_t_p5___weather_station_ad93a6894e311fb89a68049e68a26f440}{weather\+Reply\+Finished}} (QNetwork\+Reply \texorpdfstring{$\ast$}{*}reply)
+\begin{DoxyCompactList}\small\item\em Handles the reply from the Open\+Weather\+Map API. \end{DoxyCompactList}\item 
+\Hypertarget{class_t_p5___weather_station_a3aab34741f74eecd5bc7bdeabe8c5882}\label{class_t_p5___weather_station_a3aab34741f74eecd5bc7bdeabe8c5882} 
+void {\bfseries pollution\+Request} ()
+\begin{DoxyCompactList}\small\item\em Sends a request to the Open\+Weather\+Map API to get air pollution data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_t_p5___weather_station_a8350cbd928936002af64c14716d80b65}{pollution\+Reply\+Finished}} (QNetwork\+Reply \texorpdfstring{$\ast$}{*}reply)
+\begin{DoxyCompactList}\small\item\em Handles the reply from the Open\+Weather\+Map API. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_t_p5___weather_station_a4ed1cc4c1457723b816c84b0776358a0}\label{class_t_p5___weather_station_a4ed1cc4c1457723b816c84b0776358a0} 
+{\bfseries TP5\+\_\+\+Weather\+Station} (\mbox{\hyperlink{class_db_manager}{Db\+Manager}} \texorpdfstring{$\ast$}{*}dbm, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\Hypertarget{class_t_p5___weather_station_a3a8ec54f56de32fe6359090a1cf3b633}\label{class_t_p5___weather_station_a3a8ec54f56de32fe6359090a1cf3b633} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+TP5\+\_\+\+Weather\+Station} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_t_p5___weather_station}{TP5\+\_\+\+Weather\+Station} class. Deletes the UI, database manager, network manager, and pollution manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_t_p5___weather_station}{TP5\+\_\+\+Weather\+Station} class. 
+
+The \doxylink{class_t_p5___weather_station}{TP5\+\_\+\+Weather\+Station} class provides a weather station application.
+
+\begin{DoxyAuthor}{Author}
+Fja
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em dbm} & Database manager to retrieve pollution data. \\
+\hline
+{\em parent} & Parent widget. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_t_p5___weather_station_a8350cbd928936002af64c14716d80b65}\label{class_t_p5___weather_station_a8350cbd928936002af64c14716d80b65} 
+\index{TP5\_WeatherStation@{TP5\_WeatherStation}!pollutionReplyFinished@{pollutionReplyFinished}}
+\index{pollutionReplyFinished@{pollutionReplyFinished}!TP5\_WeatherStation@{TP5\_WeatherStation}}
+\doxysubsubsection{\texorpdfstring{pollutionReplyFinished}{pollutionReplyFinished}}
+{\footnotesize\ttfamily void TP5\+\_\+\+Weather\+Station\+::pollution\+Reply\+Finished (\begin{DoxyParamCaption}\item[{QNetwork\+Reply \texorpdfstring{$\ast$}{*}}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Handles the reply from the Open\+Weather\+Map API. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reply} & The reply from the Open\+Weather\+Map API. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_t_p5___weather_station_ad93a6894e311fb89a68049e68a26f440}\label{class_t_p5___weather_station_ad93a6894e311fb89a68049e68a26f440} 
+\index{TP5\_WeatherStation@{TP5\_WeatherStation}!weatherReplyFinished@{weatherReplyFinished}}
+\index{weatherReplyFinished@{weatherReplyFinished}!TP5\_WeatherStation@{TP5\_WeatherStation}}
+\doxysubsubsection{\texorpdfstring{weatherReplyFinished}{weatherReplyFinished}}
+{\footnotesize\ttfamily void TP5\+\_\+\+Weather\+Station\+::weather\+Reply\+Finished (\begin{DoxyParamCaption}\item[{QNetwork\+Reply \texorpdfstring{$\ast$}{*}}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Handles the reply from the Open\+Weather\+Map API. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reply} & The reply from the Open\+Weather\+Map API. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+TP5\+\_\+\+Weather\+Station.\+h\item 
+TP5\+\_\+\+Weather\+Station.\+cpp\end{DoxyCompactItemize}

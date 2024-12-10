@@ -1,0 +1,56 @@
+\doxysection{weatherreport.\+h}
+\hypertarget{weatherreport_8h_source}{}\label{weatherreport_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ WEATHERREPORT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ WEATHERREPORT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <qvector.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QJsonValue>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QJsonDocument>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QVariantMap>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}observer.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_weather_report}{WeatherReport}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observable}{Observable}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ QString\ main,description;\ \textcolor{comment}{//>\ text\ report}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{double}\ temp,temp\_min,temp\_max;\ \textcolor{comment}{//>\ temperatures}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{double}\ lon,lat;\ \textcolor{comment}{//>\ localisation}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ QVector<Observer*>\ observers;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_weather_report}{WeatherReport}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ addObserver(\mbox{\hyperlink{class_observer}{Observer}}*\ observer)\ \{\ observers.append(observer);\ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ removeObserver(\mbox{\hyperlink{class_observer}{Observer}}*\ observer)\ \{\ \textcolor{keywordflow}{return};\ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyObserver()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_observer}{Observer}}*\ o\ :\ observers)\ o-\/>update();\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ getters}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ getDescription()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ description;\}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ getTemp()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ temp;\}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{double}\ getTempMin()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ temp\_min;\}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ getTempMax()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ temp\_max;\}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{double}\ getLon()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ lon;\}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ getLat()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ lat;\}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ fetchData(QString\ \_main,\ QString\ \_description,\ \textcolor{keywordtype}{double}\ \_temp,\ \textcolor{keywordtype}{double}\ \_temp\_min,\ \textcolor{keywordtype}{double}\ \_temp\_max,\ \textcolor{keywordtype}{double}\ \_lon,\ \textcolor{keywordtype}{double}\ \_lat)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ main\ =\ \_main;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ description\ =\ \_description;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ temp\ =\ \_temp;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ temp\_min\ =\ \_temp\_min;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ temp\_max\ =\ \_temp\_max;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ lon\ =\ \_lon;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ lat\ =\ \_lat;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ notifyObserver();}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WEATHERREPORT\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,49 @@
+\doxysection{TP5\+\_\+\+Weather\+Station.\+h}
+\hypertarget{_t_p5___weather_station_8h_source}{}\label{_t_p5___weather_station_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <QtWidgets/QMainWindow>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ui\_TP5\_WeatherStation.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}weatherreport.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}dbmanager.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}viewreport.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}viewpollution.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QNetworkAccessManager>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QNetworkRequest>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QNetworkReply>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QUrl>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QUrlQuery>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }Ui\ \{\ \textcolor{keyword}{class\ }TP5\_WeatherStationClass;\ \}}
+\DoxyCodeLine{00018\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_p5___weather_station}{TP5\_WeatherStation}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_t_p5___weather_station}{TP5\_WeatherStation}}(\mbox{\hyperlink{class_db_manager}{DbManager}}\ *dbm,\ QWidget*\ parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_t_p5___weather_station_a3a8ec54f56de32fe6359090a1cf3b633}{\string~TP5\_WeatherStation}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ Ui::TP5\_WeatherStationClass*\ ui;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_weather_report}{WeatherReport}}*\ weatherReport;}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_db_manager}{DbManager}}*\ dbmanager;}
+\DoxyCodeLine{00037\ \ \ \ \ QNetworkAccessManager*\ netmanager;}
+\DoxyCodeLine{00038\ \ \ \ \ QNetworkAccessManager*\ pollutionManager;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_view_report}{ViewReport}}\ *reportView;}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_view_pollution}{ViewPollution}}\ *pollutionView;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_p5___weather_station_a7ea622e17297329657ae5efa5ec2ca9a}{weatherRequest}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_p5___weather_station_ad93a6894e311fb89a68049e68a26f440}{weatherReplyFinished}}(QNetworkReply*\ reply);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_p5___weather_station_a3aab34741f74eecd5bc7bdeabe8c5882}{pollutionRequest}}();}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_p5___weather_station_a8350cbd928936002af64c14716d80b65}{pollutionReplyFinished}}(QNetworkReply*\ reply);}
+\DoxyCodeLine{00048\ \};}
+
+\end{DoxyCode}
