@@ -83,7 +83,7 @@ TP5_WeatherStation::~TP5_WeatherStation()
 void TP5_WeatherStation::weatherRequest() {
 
     // your request here
-    QString URL = "https://api.openweathermap.org/data/2.5/weather?q=paris,fr&units=metric&lang=fr&appid=c7350004419589d32a96649df456bb5f";
+    QString URL = "https://api.openweathermap.org/data/2.5/weather?q=paris,fr&units=metric&lang=fr&appid=XXXXXXXXXXXXXXXXXXXXX";
     QUrl url(URL);
     QNetworkRequest* request = new QNetworkRequest(url);
     request->setUrl(url);
